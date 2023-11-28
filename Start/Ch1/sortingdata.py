@@ -13,9 +13,12 @@ dataset = list(filter(lambda d: d['snow'] > 0.0, weatherdata))
 
 # sort the entire data set by how much snowfall there was
 # TODO: method 1: use the sorted() function to create a new list
-
-
+# sorted_DataSet = sorted(dataset, key = lambda x:x['snow'], reverse = True)
+# pprint.pp(sorted_DataSet)
 # TODO: method 2: use the sort() function that every list has to sort in-place
-
+# dataset.sort(key = lambda x:x['snow'], reverse = False)
+# pprint.pp(dataset)
 
 # TODO: Sort on multiple fields: first by snowfall, then by average wind speed
+sorted_DataSet = sorted(dataset, key = lambda x:(x['snow'],x['awnd']), reverse = True)
+pprint.pp(sorted_DataSet)
