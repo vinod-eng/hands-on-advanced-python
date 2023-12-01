@@ -15,11 +15,11 @@ year = [day for day in weatherdata if "2022" in day['date']]
 
 # create manual grouping of days that had a certain level of precipitation
 year.sort(key=lambda d:d['prcp'])
-datagroup = defaultdict(list)
-for d in year:
-    datagroup[d['prcp']].append(d['date'])
-print(f"{len(datagroup)} total precipitation groups")
-pprint.pp(datagroup)
+# datagroup = defaultdict(list)
+# for d in year:
+#     datagroup[d['prcp']].append(d['date'])
+# print(f"{len(datagroup)} total precipitation groups")
+# pprint.pp(datagroup)
 
 # Use groupby to get the days of a given year by how much precipitation happened
 grouped = {k: list(v) for k, v in groupby(year, key=lambda d: d['prcp'])}
